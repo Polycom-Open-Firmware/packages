@@ -1,10 +1,10 @@
+# Debian build outputs — never tracked
 *.deb
 *.buildinfo
 *.changes
+*.substvars
 **/debian/files
 **/debian/.debhelper/
 **/debian/debhelper-build-stamp
-# per-package staging dir debian/<source>/
-poly-archive-keyring/debian/poly-archive-keyring/
-poly-tc8-profile-kiosk/debian/poly-tc8-profile-kiosk/
-poly-c60-profile-kiosk/debian/poly-c60-profile-kiosk/
+# per-source staging dir debian/<source-name>/
+**/debian/poly-*/
