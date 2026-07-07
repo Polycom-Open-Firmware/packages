@@ -136,6 +136,17 @@ the small stuff.
 
 ## Gotchas
 
+- **NO NETWORK AT FIRST BOOT — bake everything in.** A flashed device
+  routinely comes up with no internet (no DHCP, no uplink, air-gapped
+  install). **Everything a profile needs must be in the baked image.** The
+  archive + baked `sources.list` are for *build-time* install (in the
+  chroot, on the build host's network) and for *maintenance-mode* installs
+  (explicit `tc8-rw` + user-provided network) — NEVER for first boot. Hard
+  rule: **no boot-path service or first-boot script may `apt`/`curl`/`wget`
+  anything.** A profile's `Depends:` is satisfied at image build; if a role
+  needs it at runtime, it's already on disk. (Corollary: no network means no
+  NTP either — the clock starts from baked/persisted state, see fake-hwclock
+  in RO-ROOT.md; don't gate boot on time sync.)
 - **Sealed rootfs**: anything you `apt install` on a *sealed* device
   evaporates on reboot — great for testing, useless for keeps. Use
   `tc8-rw`/`tc8-ro` (see `tc8-firmware-build/USING.md`).
