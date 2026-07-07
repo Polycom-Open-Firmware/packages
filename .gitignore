@@ -1,9 +1,10 @@
-# Debian build artifacts
 *.deb
 *.buildinfo
 *.changes
 **/debian/files
 **/debian/.debhelper/
 **/debian/debhelper-build-stamp
-# per-package staging dirs (debian/<pkgname>/)
-poly-*/debian/poly-*/
+# per-package staging dir debian/<source>/
+poly-archive-keyring/debian/poly-archive-keyring/
+poly-tc8-profile-kiosk/debian/poly-tc8-profile-kiosk/
+poly-c60-profile-kiosk/debian/poly-c60-profile-kiosk/
