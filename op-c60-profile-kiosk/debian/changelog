@@ -1,0 +1,5 @@
+op-c60-profile-kiosk (0.1.0) stable; urgency=medium
+
+  * Initial metapackage: the C60 web-kiosk role (cage + cog).
+
+ -- OpenPolycom <apt@openpolycom.cc>  Tue, 07 Jul 2026 10:55:00 -0400
