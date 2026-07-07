@@ -1,0 +1,29 @@
+name: Build packages
+on:
+  push: { branches: [main] }
+  workflow_dispatch: {}
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build every package
+        run: |
+          sudo apt-get update && sudo apt-get install -y --no-install-recommends debhelper devscripts
+          mkdir -p out
+          for d in */debian; do
+            pkg=$(dirname "$d")
+            echo "=== $pkg"
+            (cd "$pkg" && dpkg-buildpackage -us -uc -b)
+            mv ./*.deb out/ 2>/dev/null || true
+          done
+          ls -l out/
+      - uses: actions/upload-artifact@v4
+        with: { name: debs, path: out/*.deb }
+      - name: Dispatch publish to the apt repo
+        env: { GH_TOKEN: "${{ secrets.DISPATCH_TOKEN }}" }
+        run: |
+          gh api repos/Polycom-Open-Firmware/apt/dispatches \
+            -f event_type=publish-packages \
+            -F 'client_payload[run_id]=${{ github.run_id }}' \
+            -f 'client_payload[repo]=${{ github.repository }}'

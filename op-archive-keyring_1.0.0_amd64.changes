@@ -1,0 +1,27 @@
+Format: 1.8
+Date: Tue, 07 Jul 2026 08:40:00 -0400
+Source: op-archive-keyring
+Binary: op-archive-keyring
+Built-For-Profiles: noudeb
+Architecture: all
+Version: 1.0.0
+Distribution: stable
+Urgency: medium
+Maintainer: OpenPolycom <apt@openpolycom.cc>
+Changed-By: OpenPolycom <apt@openpolycom.cc>
+Description:
+ op-archive-keyring - OpenPolycom apt archive signing keyring
+Changes:
+ op-archive-keyring (1.0.0) stable; urgency=medium
+ .
+   * Initial release: OpenPolycom archive signing key (ed25519,
+     7A27D57B0045457E4C51A11EFAABA6E245033620).
+Checksums-Sha1:
+ 5528477ccb6f1303052cbf32eb70b3a4a6b54632 1346 op-archive-keyring_1.0.0_all.deb
+ 8bade912119918bb70ab9e7e7f3869c8ee13512a 6514 op-archive-keyring_1.0.0_amd64.buildinfo
+Checksums-Sha256:
+ d195aacea44df7a8035b45b801f56abd6b8081ff4332a192927d1b4cd4ff8d72 1346 op-archive-keyring_1.0.0_all.deb
+ 182607ed2e4f872b493a3c59aebe1d6d1289c9592212c839b2046c10920fec64 6514 op-archive-keyring_1.0.0_amd64.buildinfo
+Files:
+ ac4fb08f55f5c9949e884ba4a820af4d 1346 misc optional op-archive-keyring_1.0.0_all.deb
+ 14566fc8e0d1954aeb092e05e26cc3e6 6514 misc optional op-archive-keyring_1.0.0_amd64.buildinfo
