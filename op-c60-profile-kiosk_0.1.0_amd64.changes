@@ -1,0 +1,26 @@
+Format: 1.8
+Date: Tue, 07 Jul 2026 10:55:00 -0400
+Source: op-c60-profile-kiosk
+Binary: op-c60-profile-kiosk
+Built-For-Profiles: noudeb
+Architecture: all
+Version: 0.1.0
+Distribution: stable
+Urgency: medium
+Maintainer: OpenPolycom <apt@openpolycom.cc>
+Changed-By: OpenPolycom <apt@openpolycom.cc>
+Description:
+ op-c60-profile-kiosk - C60 device profile: fullscreen web kiosk
+Changes:
+ op-c60-profile-kiosk (0.1.0) stable; urgency=medium
+ .
+   * Initial metapackage: the C60 web-kiosk role (cage + cog).
+Checksums-Sha1:
+ b39949855f740dce7dbbd500339086846e2d625d 1080 op-c60-profile-kiosk_0.1.0_all.deb
+ 799cb35a707755a0c093b2d0c1c555015bfdd8b4 6524 op-c60-profile-kiosk_0.1.0_amd64.buildinfo
+Checksums-Sha256:
+ 46fd2b4f61f864c65c251fffd1dc9b57e86f1de76c53ad80dda261c796438972 1080 op-c60-profile-kiosk_0.1.0_all.deb
+ 0b33a5453dce3db7bc2b02e64b54e47344ef1acf09255a771db01b5e823aa2d9 6524 op-c60-profile-kiosk_0.1.0_amd64.buildinfo
+Files:
+ 6b6c94c44823de7274800d7977d7dc63 1080 metapackages optional op-c60-profile-kiosk_0.1.0_all.deb
+ 2e62ca89ccea951c8b5d826ea8138c30 6524 metapackages optional op-c60-profile-kiosk_0.1.0_amd64.buildinfo

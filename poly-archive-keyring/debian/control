@@ -1,0 +1,14 @@
+Source: poly-archive-keyring
+Section: misc
+Priority: optional
+Maintainer: OpenPolycom <apt@openpolycom.cc>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.6.2
+
+Package: poly-archive-keyring
+Architecture: all
+Depends: ${misc:Depends}
+Description: OpenPolycom apt archive signing keyring
+ GPG keyring for the OpenPolycom package repository
+ (https://github.com/Polycom-Open-Firmware). Installs the archive signing
+ key to /usr/share/keyrings for sources.list signed-by use.

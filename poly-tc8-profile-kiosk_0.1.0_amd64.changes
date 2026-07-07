@@ -1,0 +1,27 @@
+Format: 1.8
+Date: Tue, 07 Jul 2026 08:40:00 -0400
+Source: poly-tc8-profile-kiosk
+Binary: poly-tc8-profile-kiosk
+Built-For-Profiles: noudeb
+Architecture: all
+Version: 0.1.0
+Distribution: stable
+Urgency: medium
+Maintainer: OpenPolycom <apt@openpolycom.cc>
+Changed-By: OpenPolycom <apt@openpolycom.cc>
+Description:
+ poly-tc8-profile-kiosk - TC8 device profile: fullscreen web kiosk
+Changes:
+ poly-tc8-profile-kiosk (0.1.0) stable; urgency=medium
+ .
+   * Initial metapackage: depends on the existing base kiosk stack
+     (cage + cog). Proves the repo -> image-builder pipeline (M1).
+Checksums-Sha1:
+ 0ee0b2127b0eacc1e10cf8624425a0f0243c1341 1192 poly-tc8-profile-kiosk_0.1.0_all.deb
+ 4030388e881a336e8fb35db25720337f46150ccf 6534 poly-tc8-profile-kiosk_0.1.0_amd64.buildinfo
+Checksums-Sha256:
+ 272ddb6a65eff8cbcedd96b614bcdc6b103786487f421a209ae3752c3a6cefe6 1192 poly-tc8-profile-kiosk_0.1.0_all.deb
+ 84d05c52dacad8cc311712acc8edc4c18f84e8a1f5a19ce1d453906f99e0ce9a 6534 poly-tc8-profile-kiosk_0.1.0_amd64.buildinfo
+Files:
+ e0773b1a5b092b3dbcc260d3bead6d6d 1192 metapackages optional poly-tc8-profile-kiosk_0.1.0_all.deb
+ 6d5dda43d18b6cba5af38b6b504770a6 6534 metapackages optional poly-tc8-profile-kiosk_0.1.0_amd64.buildinfo

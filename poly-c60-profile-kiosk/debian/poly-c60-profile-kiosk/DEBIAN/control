@@ -1,0 +1,13 @@
+Package: poly-c60-profile-kiosk
+Version: 0.1.0
+Architecture: all
+Maintainer: OpenPolycom <apt@openpolycom.cc>
+Installed-Size: 7
+Depends: cage, cog
+Section: metapackages
+Priority: optional
+Description: C60 device profile: fullscreen web kiosk
+ Metapackage selecting the web-kiosk role for the Polycom Trio C60: the
+ same cage+cog Wayland kiosk as the TC8, on the C60's 720x1280 portrait
+ panel. Pins the stack the base image ships; profile composition lives in
+ the package archive (polycom_dev/PROFILES-PLAN.md).

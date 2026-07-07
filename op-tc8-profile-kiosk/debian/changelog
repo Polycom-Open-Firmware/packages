@@ -1,6 +1,0 @@
-op-tc8-profile-kiosk (0.1.0) stable; urgency=medium
-
-  * Initial metapackage: depends on the existing base kiosk stack
-    (cage + cog). Proves the repo -> image-builder pipeline (M1).
-
- -- OpenPolycom <apt@openpolycom.cc>  Tue, 07 Jul 2026 08:40:00 -0400
