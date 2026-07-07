@@ -1,0 +1,9 @@
+# Debian build artifacts
+*.deb
+*.buildinfo
+*.changes
+**/debian/files
+**/debian/.debhelper/
+**/debian/debhelper-build-stamp
+# per-package staging dirs (debian/<pkgname>/)
+poly-*/debian/poly-*/

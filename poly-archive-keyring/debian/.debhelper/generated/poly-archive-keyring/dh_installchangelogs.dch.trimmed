@@ -1,6 +1,0 @@
-poly-archive-keyring (1.0.0) stable; urgency=medium
-
-  * Initial release: OpenPolycom archive signing key (ed25519,
-    7A27D57B0045457E4C51A11EFAABA6E245033620).
-
- -- OpenPolycom <apt@openpolycom.cc>  Tue, 07 Jul 2026 08:40:00 -0400
