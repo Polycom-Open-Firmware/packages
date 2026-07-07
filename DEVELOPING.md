@@ -33,7 +33,7 @@ across reboots *and* reflashes.
 | `provisioner` | the wizard: profile picker (M4) + per-profile settings pages + flashing |
 | `c60-kodi-portrait`, `chromium-a53` | packages with their own upstream/build gravity publish from their own repos |
 
-Naming: `op-` prefix everywhere; `poly-<device>-profile-<name>` for
+Naming: `poly-` prefix everywhere; `poly-<device>-profile-<name>` for
 profiles, `poly-app-<name>` for apps, `arch: all` unless it ships binaries.
 
 ## How publishing works
@@ -103,7 +103,7 @@ Say `poly-tc8-profile-signage`:
    ```
    cd poly-tc8-profile-signage && dpkg-buildpackage -us -uc -b
    scp ../poly-tc8-profile-signage_*.deb root@<panel>:/tmp/
-   # on the panel: tc8-rw && reboot; apt install /tmp/op-…deb; test; tc8-ro && reboot
+   # on the panel: tc8-rw && reboot; apt install /tmp/poly-…deb; test; tc8-ro && reboot
    ```
 4. **Publish**: push to this repo (CI builds + dispatches), or the manual
    path above. Verify: `apt update && apt-cache policy poly-tc8-profile-signage`
