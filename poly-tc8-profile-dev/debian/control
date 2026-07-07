@@ -1,0 +1,12 @@
+Source: poly-tc8-profile-dev
+Section: metapackages
+Priority: optional
+Maintainer: OpenPolycom <apt@openpolycom.cc>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.6.2
+
+Package: poly-tc8-profile-dev
+Architecture: all
+Depends: ${misc:Depends}, openssh-server
+Description: TC8 device profile: developer console
+ Selects the developer role for the Polycom TC8: boots to a console with SSH and no kiosk lock (apply-config sets multi-user.target + tty1 autologin). Pulls openssh-server so remote access is always present. See polycom_dev/PROFILES-PLAN.md.

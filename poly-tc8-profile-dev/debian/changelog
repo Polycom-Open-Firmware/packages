@@ -1,0 +1,5 @@
+poly-tc8-profile-dev (0.1.0) stable; urgency=medium
+
+  * Initial dev-role metapackage: pulls openssh-server for the console+SSH role.
+
+ -- OpenPolycom <apt@openpolycom.cc>  Tue, 07 Jul 2026 15:30:00 -0400

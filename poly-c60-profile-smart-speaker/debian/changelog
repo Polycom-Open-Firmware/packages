@@ -1,0 +1,5 @@
+poly-c60-profile-smart-speaker (0.1.0) stable; urgency=medium
+
+  * Initial smart-speaker role: audio baseline only; voice app pending.
+
+ -- OpenPolycom <apt@openpolycom.cc>  Tue, 07 Jul 2026 15:30:00 -0400

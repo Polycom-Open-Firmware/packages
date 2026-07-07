@@ -1,0 +1,12 @@
+Source: poly-c60-profile-dev
+Section: metapackages
+Priority: optional
+Maintainer: OpenPolycom <apt@openpolycom.cc>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.6.2
+
+Package: poly-c60-profile-dev
+Architecture: all
+Depends: ${misc:Depends}, openssh-server
+Description: C60 device profile: developer console
+ Selects the developer role for the Polycom Trio C60: console + SSH, no kiosk lock. Pulls openssh-server. See polycom_dev/PROFILES-PLAN.md.
