@@ -17,11 +17,11 @@ All software is plain **Debian packages** from the OpenPolycom apt archive
 (GPG-signed, hosted on Cloudflare R2, `$0` egress), which the base image
 trusts out of the box — so the same archive also serves live installs in
 `tc8-rw` maintenance mode. Per-device settings (kiosk URL, media source…)
-are **not** baked into images: they ride the config blob in the `cache`
-partition, applied **once per unique blob** (sha-gated; on sealed boots the
-applied `/etc` is snapshot-restored from `/persist`, and a re-provision —
-new blob, new sha — re-applies fresh). `/root` persists on its own
-partition across reboots *and* reflashes.
+are **not** baked into images: they arrive as a config blob in the `cache`
+partition, which the device consumes at the next boot — applied to the
+real filesystem, then invalidated in place. The blob is a message, not a
+store; on sealed boots the initramfs applies it before the overlay seals.
+`/root` persists on its own partition across reboots *and* reflashes.
 
 ## Who lives where
 
@@ -119,9 +119,9 @@ Say `poly-tc8-profile-signage`:
    that's the acceptance bar.
 6. **Config keys** (if the role has settings): add them to
    `poly-firmware-build/CONFIG-PARTITION.md` + implement in
-   `rootfs/etc/tc8-config/apply-config.sh`. Handlers still must be
-   **idempotent** — apply runs once per unique blob, but a re-provision
-   re-runs every handler against the already-configured system.
+   `rootfs/etc/tc8-config/apply-config.sh`. Handlers must be
+   **idempotent** — every new blob re-runs every handler against the
+   already-configured system.
 7. **Wizard** (M4): add the profile to the device's list in
    `provisioner/packages/core/src/profiles/<device>.ts` and give it a
    `SettingsSection` for its keys. The wizard resolves the release asset
