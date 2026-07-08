@@ -28,8 +28,8 @@ across reboots *and* reflashes.
 |---|---|
 | `packages` (this repo) | `debian/` tree per package: all profile metapackages, `poly-archive-keyring`, `poly-*-base` (as rootfs content migrates), small tools |
 | `apt` | **The only writer** to the published archive: stateless `publish.sh` (apt-ftparchive + GPG) + CI; pool/indexes live only in R2 |
-| `tc8-rootfs` / `c60-rootfs` | debootstrap base + pre-apt essentials (sources.list, keyring, users, fstab) + `--profile=` variant machinery |
-| `tc8-firmware-build` / `c60-…` | image composers: kernel, initramfs, `boot.img`, `--os-profile=` packing into flashable variants |
+| `poly-rootfs` | debootstrap base + pre-apt essentials (sources.list, keyring, users, fstab) + `--profile=` variant machinery + `--device=<tc8\|c60>` for the per-board profile package (M6: one repo, both boards) |
+| `poly-firmware-build` | image composer for both targets: `--target=<tc8\|c60>` builds the kernel, initramfs, `boot.img`, and packs `--os-profile=` variants (boota sparse for tc8, booti zstd for c60) |
 | `provisioner` | the wizard: profile picker (M4) + per-profile settings pages + flashing |
 | `c60-kodi-portrait`, `chromium-a53` | packages with their own upstream/build gravity publish from their own repos |
 
@@ -57,11 +57,11 @@ is configured, publish manually: build the debs, then run the apt repo's
 
 ## How images consume profiles
 
-`tc8-rootfs/build.sh --profile=a,b` debootstraps the base **once**, then
+`poly-rootfs/build.sh --profile=a,b` debootstraps the base **once**, then
 per profile makes an isolated `rsync` clone, chroot-installs
 `poly-tc8-profile-<name>` from the archive, stamps `TC8_PROFILE` into
 `/etc/tc8-version`, and tars `rootfs-<name>.tar.gz`. The composer
-(`tc8-firmware-build/build.sh --profile=emmc --os-profile=a,b`) packs each
+(`poly-firmware-build/build.sh --profile=emmc --os-profile=a,b`) packs each
 tarball into `rootfs-<name>.{img,simg}`; plain `rootfs.simg` always
 aliases the default (`kiosk`) so old tooling and the wizard keep working.
 (`--os-profile` because `--profile` was already the emmc/nfs build target.)
@@ -117,7 +117,7 @@ Say `poly-tc8-profile-signage`:
    if updating), boot, confirm the role comes up with zero manual steps —
    that's the acceptance bar.
 6. **Config keys** (if the role has settings): add them to
-   `tc8-firmware-build/CONFIG-PARTITION.md` + implement in
+   `poly-firmware-build/CONFIG-PARTITION.md` + implement in
    `rootfs/etc/tc8-config/apply-config.sh`. Settings must be re-appliable
    every boot (idempotent) — `/etc` is ephemeral by design.
 7. **Wizard** (M4): add the profile to the device's list in
@@ -149,7 +149,7 @@ the small stuff.
   in RO-ROOT.md; don't gate boot on time sync.)
 - **Sealed rootfs**: anything you `apt install` on a *sealed* device
   evaporates on reboot — great for testing, useless for keeps. Use
-  `tc8-rw`/`tc8-ro` (see `tc8-firmware-build/USING.md`).
+  `tc8-rw`/`tc8-ro` (see `poly-firmware-build/USING.md`).
 - **C60 budget**: 1.6 GiB image ceiling, non-negotiable. Check with the
   builder before publishing a C60 profile.
 - **Key hygiene**: never commit the private key; the public keyring is the
