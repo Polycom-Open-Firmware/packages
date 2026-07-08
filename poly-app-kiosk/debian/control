@@ -8,6 +8,7 @@ Standards-Version: 4.6.2
 Package: poly-app-kiosk
 Architecture: all
 Depends: ${misc:Depends}, cage, cog
+Suggests: poly-app-chromium
 Description: Application: fullscreen web kiosk
  Metapackage for the kiosk application: a Wayland compositor (cage)
  driving a fullscreen browser at KIOSK_URL. The browser engine is
