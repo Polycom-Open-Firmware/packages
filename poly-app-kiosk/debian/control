@@ -1,0 +1,16 @@
+Source: poly-app-kiosk
+Section: metapackages
+Priority: optional
+Maintainer: OpenPolycom <apt@openpolycom.cc>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.6.2
+
+Package: poly-app-kiosk
+Architecture: all
+Depends: ${misc:Depends}, cage, cog
+Description: Application: fullscreen web kiosk
+ Metapackage for the kiosk application: a Wayland compositor (cage)
+ driving a fullscreen browser at KIOSK_URL. The browser engine is
+ selected by the KIOSK_ENGINE config key — webkit (cog) is the default;
+ the chromium engine arrives with poly-app-chromium. Board-agnostic:
+ runs on any Polycom panel this project supports.

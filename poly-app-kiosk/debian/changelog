@@ -1,0 +1,7 @@
+poly-app-kiosk (0.2.0) stable; urgency=medium
+
+  * Kiosk as a board-agnostic application metapackage: cage + cog
+    (webkit engine); KIOSK_ENGINE selects the engine when alternatives
+    are installed.
+
+ -- OpenPolycom <apt@openpolycom.cc>  Wed, 08 Jul 2026 12:00:00 -0400

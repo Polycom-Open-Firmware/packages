@@ -9,7 +9,7 @@ Project-level plan and milestone status: `polycom_dev/PROFILES-PLAN.md`
 
 Devices run a **sealed OS** (read-only rootfs behind a tmpfs overlay;
 Debian bookworm arm64) whose *role* — web kiosk, media player, … — is a
-**profile**: a metapackage `poly-<device>-profile-<name>` whose `Depends:`
+**application**: a metapackage `poly-app-<id>` whose `Depends:`
 pulls the apps and services for that role. Profiles are resolved at
 **flash time**: the image builders produce one rootfs variant per profile
 (`rootfs-<name>.simg`), and the wizard flashes the one the user picks.
@@ -34,8 +34,14 @@ store; on sealed boots the initramfs applies it before the overlay seals.
 | `provisioner` | the wizard: profile picker (M4) + per-profile settings pages + flashing |
 | `c60-kodi-portrait`, `chromium-a53` | packages with their own upstream/build gravity publish from their own repos |
 
-Naming: `poly-` prefix everywhere; `poly-<device>-profile-<name>` for
-profiles, `poly-app-<name>` for apps, `arch: all` unless it ships binaries.
+Naming: `poly-` prefix everywhere. Applications are `poly-app-<id>` —
+**board-agnostic** metapackages (`arch: all` unless they ship binaries);
+an application that needs board hardware is restricted in the wizard's
+catalog (`boards:` metadata on the Application entry), not by per-board
+packages. The per-board `poly-<device>-profile-<name>` metapackages are
+the legacy naming, kept during the transition — the rootfs builder
+installs `poly-app-<id>` when it exists and falls back to the per-board
+name.
 
 ## How publishing works
 
