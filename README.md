@@ -2,7 +2,7 @@
 
 Source monorepo for `poly-*` Debian packages: device-profile metapackages,
 the archive keyring, and (as content migrates out of the rootfs repos)
-`op-{tc8,c60}-base`. One directory per package, standard `debian/` trees,
+`poly-{tc8,c60}-base`. One directory per package, standard `debian/` trees,
 arch:all unless stated. CI builds everything on push and dispatches the
 `apt` repo to publish. **Developer guide** — architecture, publishing
 flow, and the add-a-profile/app cookbook: [DEVELOPING.md](DEVELOPING.md).
