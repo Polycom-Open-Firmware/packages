@@ -9,7 +9,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Build every package
         run: |
-          sudo apt-get update && sudo apt-get install -y --no-install-recommends debhelper devscripts
+          sudo apt-get update && sudo apt-get install -y --no-install-recommends build-essential debhelper devscripts
           mkdir -p out
           for d in */debian; do
             pkg=$(dirname "$d")
