@@ -1,3 +1,10 @@
+poly-tc8-profile-kiosk (0.1.1) stable; urgency=medium
+
+  * Depend on weston (kiosk-shell compositor) instead of cage, matching
+    the kiosk-launch stack the rootfs ships.
+
+ -- OpenPolycom <apt@openpolycom.cc>  Fri, 17 Jul 2026 23:46:10 -0400
+
 poly-tc8-profile-kiosk (0.1.0) stable; urgency=medium
 
   * Initial metapackage: depends on the existing base kiosk stack

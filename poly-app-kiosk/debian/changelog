@@ -1,3 +1,10 @@
+poly-app-kiosk (0.2.1) stable; urgency=medium
+
+  * Depend on weston (kiosk-shell compositor) instead of cage, matching
+    the kiosk-launch stack the rootfs ships.
+
+ -- OpenPolycom <apt@openpolycom.cc>  Fri, 17 Jul 2026 23:46:10 -0400
+
 poly-app-kiosk (0.2.0) stable; urgency=medium
 
   * Kiosk as a board-agnostic application metapackage: cage + cog
