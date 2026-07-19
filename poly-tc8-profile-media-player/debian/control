@@ -1,0 +1,15 @@
+Source: poly-tc8-profile-media-player
+Section: metapackages
+Priority: optional
+Maintainer: OpenPolycom <apt@openpolycom.cc>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.6.2
+
+Package: poly-tc8-profile-media-player
+Architecture: all
+Depends: ${misc:Depends}, poly-app-kodi
+Description: TC8 device profile: Kodi media player
+ Metapackage selecting the media-player role for the Polycom TC8 panel:
+ Kodi fullscreen on GBM/KMS with the board's ALSA routing and Kodi's
+ default landscape skin. The config blob's PROFILE=media-player selects
+ the kodi engine in the kiosk weston stack (KIOSK_ENGINE=kodi).

@@ -1,0 +1,5 @@
+poly-tc8-profile-media-player (0.1.0) stable; urgency=medium
+
+  * Media-player role for the TC8: Kodi, default landscape skin.
+
+ -- OpenPolycom <apt@openpolycom.cc>  Sat, 18 Jul 2026 19:37:48 -0400

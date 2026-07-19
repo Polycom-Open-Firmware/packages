@@ -1,0 +1,7 @@
+poly-app-kodi (0.1.0) stable; urgency=medium
+
+  * Kodi as the media-player application: the kiosk weston stack runs
+    Kodi as its client (KIOSK_ENGINE=kodi), with the board ALSA routing
+    in /etc/asound.conf.
+
+ -- OpenPolycom <apt@openpolycom.cc>  Sun, 19 Jul 2026 09:15:52 -0400

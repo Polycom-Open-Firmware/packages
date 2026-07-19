@@ -1,0 +1,15 @@
+Source: poly-c60-profile-media-player
+Section: metapackages
+Priority: optional
+Maintainer: OpenPolycom <apt@openpolycom.cc>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.6.2
+
+Package: poly-c60-profile-media-player
+Architecture: all
+Depends: ${misc:Depends}, poly-app-kodi, poly-kodi-skin-c60portrait
+Description: C60 device profile: Kodi media player (portrait)
+ Metapackage selecting the media-player role for the Polycom Trio C60:
+ Kodi fullscreen on GBM/KMS with the portrait skin and the board's ALSA
+ routing. The config blob's PROFILE=media-player selects the kodi engine
+ in the kiosk weston stack (KIOSK_ENGINE=kodi).
