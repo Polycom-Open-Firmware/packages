@@ -11,7 +11,7 @@ Depends: ${misc:Depends}, kodi, fonts-noto-core, alsa-utils
 Recommends: ffmpeg
 Description: Application: Kodi media player (weston client)
  Metapackage for the media-player application: Kodi running fullscreen as
- the kiosk's Wayland client (KIOSK_ENGINE=kodi in kiosk-launch), with ALSA
- routed to the board's codec via /etc/asound.conf. The portrait UI for the
- C60 comes from poly-kodi-skin-c60portrait. Board-agnostic: runs on any
+ the kiosk's Wayland client (KIOSK_ENGINE=kodi in kiosk-launch). Per-board
+ pieces (the C60 portrait UI and its ALSA routing) come from
+ poly-kodi-skin-c60portrait. Board-agnostic: runs on any
  Polycom panel this project supports.

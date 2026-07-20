@@ -1,3 +1,11 @@
+poly-app-kodi (0.1.1) stable; urgency=medium
+
+  * Board-agnostic only: the keplerc60 ALSA routing moves to
+    poly-kodi-skin-c60portrait (it broke audio on the TC8, whose codec
+    differs and whose ALSA defaults are correct).
+
+ -- OpenPolycom <apt@openpolycom.cc>  Mon, 20 Jul 2026 08:28:06 -0400
+
 poly-app-kodi (0.1.0) stable; urgency=medium
 
   * Kodi as the media-player application: the kiosk weston stack runs
