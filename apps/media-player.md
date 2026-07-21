@@ -15,17 +15,21 @@ the TC8 uses its ALSA defaults.
 - **`full`** (default) — the whole Kodi UI: library, file browsing,
   playback controls, settings.
 - **`photoframe`** — light on UI: the panel boots straight into a
-  fullscreen slideshow of the media, no interaction needed. Implemented
+  fullscreen **pictures** slideshow, no interaction needed. Implemented
   by `poly-photoframe.service`, which waits for Kodi's JSON-RPC and
-  starts the slideshow (repeat-all) from `MEDIA_SOURCE`, else
-  `/persist/media`.
+  starts the slideshow (repeat-all) from `/persist/media/photos`, or
+  `MEDIA_SOURCE` if set. The source is pictures-only by design: a
+  slideshow over a mixed tree (photos + video + music) makes Kodi spawn
+  a video player and a folder-picker alongside the pictures.
 
 ## Media sources
 
 - **Local, always present:** `/persist/media` — on the persistent
-  partition, so content survives reboots *and* reinstalls. On the TC8
-  the panel's USB data port exposes persistent storage as an MTP
-  "Portable Device" for drag-and-drop.
+  partition, so content survives reboots *and* reinstalls. It's split
+  into `photos/`, `music/`, and `video/` subdirs; the photo-frame mode
+  slideshows `photos/`. On the TC8 the panel's USB data port exposes
+  this storage as an MTP "Portable Device" for drag-and-drop — drop
+  pictures in `photos/` to see them in the frame.
 - **Network (`MEDIA_SOURCE`):** any Kodi-supported path — `smb://`,
   `nfs://`, `http://`. Added to Kodi's video/music/pictures sources
   alongside the local one.
